@@ -1,9 +1,8 @@
 package doc_friends_PS;
 
 public class Ps {
-
-	public static void main(String args[]) {
-		String q="ab23c4d56e78f9g12h34i5j12k45l67n89m99o1k123p456q567r768s890t67u456v345w234x23y239z";
+	
+	public int[] getNumbersArray(String q) {
 		int numbers[] = new int[0];
 		char charArr[] = q.toCharArray();
 		String number="";
@@ -20,7 +19,10 @@ public class Ps {
 				number="";
 			}
 		}
-		
+		return numbers;
+	}
+	
+	public int getMinMaxIndexSum(int numbers[]) {
 		int a=0;
 		int b=0;
 		int max=0;
@@ -40,6 +42,13 @@ public class Ps {
 				}
 			}
 		}
-		System.out.println(a+b);
+		return a+b;
+	}
+	
+	public static void main(String args[]) {
+		Ps ps = new Ps();
+		String q="ab23c4d56e78f9g12h34i5j12k45l67n89m99o1k123p456q567r768s890t67u456v345w234x23y239z";
+		int numbers[] = ps.getNumbersArray(q);
+		System.out.println(ps.getMinMaxIndexSum(numbers));
 	}
 }
